@@ -11,7 +11,7 @@ class LinkedList {
   insertFirst(data){
     const newNode = new Node(data, this.head);
     if (!this.head) this.tail = newNode;
-    this.head = newNode
+    this.head = newNode;
     this.length++;
   }
 
@@ -88,7 +88,7 @@ class LinkedList {
       // node.next.next will point to null if we are the second to last node
       while(node.next.next !== null){
         node = node.next;
-      }
+      };
       node.next = null;
       this.tail = node;
       this.length--;
@@ -98,20 +98,28 @@ class LinkedList {
       this.tail = this.head;
       this.length--;
       return this.head;
-    }
+    };
   }
 
+  // insertLast(data){
+  //   let node = this.head;
+
+  //   while(node !== this.tail){
+  //     node = node.next;
+  //   }
+
+  //   node.next = new Node(data);
+  //   this.tail = node.next;
+  //   this.length++;
+  // }	
+
   insertLast(data){
-    let node = this.head;
+    let newNode = new Node(data);
 
-    while(node !== this.tail){
-      node = node.next;
-    }
-
-    node.next = new Node(data);
-    this.tail = node.next;
+    this.tail.next = newNode;
+    this.tail = newNode;
     this.length++;
-  }	
+  }
 
   // getAt(integer)	(Node)	Returns the node at the provided index
   getAt(index){
@@ -136,7 +144,7 @@ class LinkedList {
       const nextNode = this.getAt(index + 1);
       nodeBefore.next = nextNode; 
       this.length--;
-    }
+    };
     return this.getAt(index);
   }
 
@@ -181,7 +189,7 @@ class ListIterator {
 
   next(){
     let node = this.list.getAt(this.member);
-    if(!node) return {done: true};
+    if(!node) return { done: true };
 
     let value = node;
 
