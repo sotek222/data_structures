@@ -1,26 +1,39 @@
 // Array implementation:
 
-class Stack{
-  constructor(){
-    this.data = [];
+// class Stack{
+//   constructor(){
+//     this.data = [];
+//   }
+
+//   push(ele){
+//     this.data.push(ele);
+//   }
+
+//   pop(ele){
+//     return this.data.pop();
+//   }
+
+//   peek(){
+//     return this.data[this.data.length -1];
+//   }
+// }
+
+// LinkedList implementation 
+class Stack {
+  constructor() {
+    this.data = new LinkedList();
   }
 
   push(ele){
-    this.data.push(ele);
+    return this.data.insertFirst(ele);
   }
 
-  pop(ele){
-    return this.data.pop();
+  pop(){
+    return this.data.removeFirst();
   }
 
   peek(){
-    return this.data[this.data.length -1];
+    return this.data.getFirst();
   }
-}
 
-// LinkedList implementation 
-// class Stack {
-//   constructor() {
-//     this = new LinkedList();
-//   }
-// }
+}
