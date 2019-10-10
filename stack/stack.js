@@ -2,7 +2,7 @@
 
 // class Stack{
 //   constructor(){
-//     this.data = [];
+//     this.data = new Array();
 //   }
 
 //   push(ele){
